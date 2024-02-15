@@ -8,7 +8,15 @@ function handleKeyPress(event) {
   const pressedKey = event.keyCode;
   const computerKey = Math.floor(Math.random() * 26) + 65; // Generate A-Z key code
 
-  // Clear message and allow new keypress
+  if ( pressedKey === computerKey){
+      userScore++;
+  } else {
+   computerScore++;
+  }
+
+  console.log(userScore);
+  console.log (computerScore);
+  
   messageElement.textContent = "";
   document.addEventListener('keydown', handleKeyPress); // Re-add listener
 }
